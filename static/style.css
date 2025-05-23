@@ -1,0 +1,177 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5; /* Um cinza claro para o fundo da página */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 450px; /* Largura do chat */
+    height: 90vh; /* Altura do chat, pode ser ajustada */
+    max-height: 700px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Para manter os cantos arredondados */
+}
+
+.chat-header {
+    background-color: #f7f7f7; /* Um pouco mais escuro que o corpo do chat */
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-icon {
+    font-size: 1.8em;
+    margin-right: 10px;
+    color: teal; /* Cor do ícone */
+}
+
+.chat-header h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0;
+    color: #2c3e50;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto; /* Permite scroll */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaço entre as mensagens */
+}
+
+.message-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.message-box {
+    padding: 10px 15px;
+    border-radius: 18px; /* Cantos bem arredondados */
+    max-width: 75%;
+    word-wrap: break-word;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.sender-name {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+.user-message {
+    justify-content: flex-end; /* Alinha a caixa da mensagem do usuário à direita */
+}
+.user-message .message-box {
+    background-color: #dcf8c6; /* Verde claro, tipo WhatsApp */
+    color: #1e1e1e;
+    border-bottom-right-radius: 5px; /* Para a "cauda" da bolha (simples) */
+}
+.user-message .sender-name {
+    color: #4CAF50; /* Verde para o nome do usuário */
+}
+
+
+.valerium-message {
+    justify-content: flex-start; /* Alinha a caixa da mensagem da IA à esquerda */
+}
+.valerium-message .message-box {
+    background-color: #e9ebeb; /* Cinza claro */
+    color: #1e1e1e;
+    border-bottom-left-radius: 5px; /* "Cauda" da bolha */
+}
+.valerium-message .sender-name {
+    color: teal; /* Azul esverdeado para o nome da IA */
+}
+
+
+.chat-suggestions {
+    padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem linha */
+    gap: 8px; /* Espaço entre os botões */
+    justify-content: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.suggestion-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #dcdcdc;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.2s ease;
+}
+
+.suggestion-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.loading-indicator {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    color: #777;
+    font-style: italic;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    background-color: #f7f7f7;
+}
+
+.chat-input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 20px; /* Cantos arredondados */
+    margin-right: 10px;
+    font-size: 1em;
+    outline: none;
+}
+.chat-input-area input[type="text"]:focus {
+    border-color: teal;
+    box-shadow: 0 0 0 2px rgba(0, 128, 128, 0.2);
+}
+
+.chat-input-area button {
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Botão redondo */
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.chat-input-area button:hover {
+    background-color: #006666; /* Teal mais escuro */
+}
+
+.chat-input-area button svg {
+    fill: white;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valerium - Assistente Histórico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Ícone da Aba (opcional, use um .ico ou .png) -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <!-- Ícone pode ser um SVG, caractere ou img -->
+            <span class="header-icon">📚</span>
+            <h1>Valerium</h1>
+        </header>
+
+        <div class="chat-messages" id="chatMessages">
+            <!-- Mensagem de boas-vindas da IA -->
+            <div class="message-wrapper valerium-message">
+                <div class="message-box">
+                    <span class="sender-name">Valerium</span>
+                    <p class="message-text">Saudações! Sou Valerium. O que você deseja desvendar sobre a história?</p>
+                </div>
+            </div>
+            <!-- Mensagens de exemplo (descomente para ver o estilo) -->
+            <!--
+            <div class="message-wrapper user-message">
+                <div class="message-box">
+                    <span class="sender-name">Você</span>
+                    <p class="message-text">Quem foi Cleópatra?</p>
+                </div>
+            </div>
+            <div class="message-wrapper valerium-message">
+                <div class="message-box">
+                    <span class="sender-name">Valerium</span>
+                    <p class="message-text">Cleópatra VII Filopátor foi a última governante ativa do Reino Ptolemaico do Egito...</p>
+                </div>
+            </div>
+            -->
+        </div>
+
+        <div class="chat-suggestions" id="chatSuggestions">
+            <button class="suggestion-btn">Resuma a Segunda Guerra</button>
+            <button class="suggestion-btn">Quem foi Cleópatra?</button>
+            <button class="suggestion-btn">Egito Antigo</button>
+            <!-- <button class="suggestion-btn more-suggestions">Mostrar mais</button> -->
+        </div>
+
+        <div class="loading-indicator" id="loadingIndicator" style="display: none;">
+            Valerium está pensando...
+        </div>
+
+        <footer class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Pergunte a Valerium...">
+            <button id="sendButton">
+                <!-- Ícone de Envio (SVG ou caractere) -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                </svg>
+            </button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
