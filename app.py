@@ -74,7 +74,10 @@ def chat_api():
         print(f"Erro no endpoint /chat: {e}")
         return jsonify({"error": f"Ocorreu um erro interno em Valerium: {e}"}), 500
 
-
 if __name__ == '__main__':
-    # Garanta que o .env está no mesmo diretório ou que as variáveis de ambiente estão setadas
-    app.run(debug=True) # debug=True é bom para desenvolvimento
+    # Isso é útil para rodar localmente com `python app.py`
+    # Mas em produção (Render), Gunicorn será usado.
+    # O Render vai setar a porta automaticamente.
+    # Você pode remover essa parte ou mantê-la para testes locais.
+    port = int(os.environ.get("PORT", 5000)) # Porta padrão 5000 se PORT não estiver setado
+    app.run(host='0.0.0.0', port=port, debug=False) # debug=False em produção
